@@ -7,9 +7,9 @@ public class NotificarMailImpl implements NotificarMensaje {
 
 	private Mensaje notificacion;
 	
-	public NotificarMailImpl(Mensaje notificacion) {
+	public NotificarMailImpl(Mensaje msg) {
 		super();
-		this.notificacion = notificacion;
+		this.notificacion = msg;
 	}
 
 	@Override

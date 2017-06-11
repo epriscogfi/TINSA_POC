@@ -8,9 +8,9 @@ public class NotificarFAXImpl implements NotificarMensaje {
 	
 	private Mensaje notificacion;
 	
-	public NotificarFAXImpl(Mensaje notificacion) {
+	public NotificarFAXImpl(Mensaje msg) {
 		super();
-		this.notificacion = notificacion;
+		this.notificacion = msg;
 	}
 
 	@Override

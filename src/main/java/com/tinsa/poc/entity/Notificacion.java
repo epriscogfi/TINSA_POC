@@ -15,18 +15,20 @@ public class Notificacion {
 	private String destino;
 	private String tipoEnvio;
 	private String mensaje;
+	private Integer estado;
 	
 	
 	protected Notificacion() {}
 
-	public Notificacion(String sendTo, String tipoEnvio, String mensaje) {
+	public Notificacion(String sendTo, String tipoEnvio, String mensaje, Integer estado) {
 		this.destino = sendTo;
 		this.tipoEnvio = tipoEnvio;
 		this.mensaje = mensaje;
+		this.estado = estado;
 	}
 	
 	@Override
 	public String toString(){
-		return String.format("Notificación [id=%d, destino=%s, tipoEnvio=%s, mensaje=%s]", id, destino, tipoEnvio, mensaje);
+		return String.format("Notificación [id=%d, destino=%s, tipoEnvio=%s, mensaje=%s, estado=%d]", id, destino, tipoEnvio, mensaje);
 	}
 }

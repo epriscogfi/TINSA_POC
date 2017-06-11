@@ -5,11 +5,11 @@ import com.tinsa.poc.proxy.Mensaje;
 
 public class NotificarWatchaImpl implements NotificarMensaje {
 
-	private Mensaje notificacion;
+	private Mensaje msg;
 	
-	public NotificarWatchaImpl(Mensaje notificacion) {
+	public NotificarWatchaImpl(Mensaje msg) {
 		super();
-		this.notificacion = notificacion;
+		this.msg = msg;
 	}
 
 	@Override

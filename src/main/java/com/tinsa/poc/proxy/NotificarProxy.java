@@ -10,29 +10,29 @@ import com.tinsa.poc.utils.Constantes;
 public class NotificarProxy implements NotificarMensaje{
 	
 	private NotificarMensaje notificar;
-	private Mensaje notificacion;
+	private Mensaje msg;
 	
-	public NotificarProxy(Mensaje notificacion) {
+	public NotificarProxy(Mensaje msg) {
 		super();
 		
-		this.notificacion = notificacion;
+		this.msg = msg;
 		
-		switch (notificacion.getTipoEnvio()){
+		switch (msg.getTipoEnvio()){
 		
 		case Constantes.MAIL: 
-			this.notificar = new NotificarMailImpl(notificacion);
+			this.notificar = new NotificarMailImpl(msg);
 			break;
 			
 		case Constantes.SMS:
-			this.notificar = new NotificarSMSImpl(notificacion);
+			this.notificar = new NotificarSMSImpl(msg);
 			break;
 		
 		case Constantes.FAX:
-			this.notificar = new NotificarFAXImpl(notificacion);
+			this.notificar = new NotificarFAXImpl(msg);
 			break;
 			
 		case Constantes.WHATCHA:
-			this.notificar = new NotificarWatchaImpl(notificacion);
+			this.notificar = new NotificarWatchaImpl(msg);
 			break;
 		
 		
@@ -46,9 +46,7 @@ public class NotificarProxy implements NotificarMensaje{
 		
 		this.notificar.tratarMensaje();
 		
-		// TODO Guardar mensaje en BBDD
-		
-		
+		//NotificacionRespository notifRepository = new NotificacionRespository ();
 	}
 
 }

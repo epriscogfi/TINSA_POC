@@ -16,23 +16,23 @@ import com.tinsa.poc.utils.Constantes;
 public class NotificarSMSImpl implements NotificarMensaje {
 
 	
-	private Mensaje notificacion;
+	private Mensaje msg;
 
-	public NotificarSMSImpl(Mensaje notificacion) {
+	public NotificarSMSImpl(Mensaje msg) {
 		super();
-		this.notificacion = notificacion;
+		this.msg = msg;
 	}
 
 	
 	@Override
 	public void tratarMensaje() {
 		// TODO Auto-generated method stub
-		System.out.println("Enviando " + this.notificacion.getTipoEnvio() + " notificacion con id " + notificacion.getId() + " ... to " + this.notificacion.getDestino() + " with this message " + this.notificacion.getMensaje());
+		System.out.println("Enviando " + this.msg.getTipoEnvio() + " notificacion con id " + msg.getId() + " ... to " + this.msg.getDestino() + " with this message " + this.msg.getMensaje());
 		try { 
 			
 			HttpClient httpClient = HttpClients.createDefault();
 			
-			String url  = Constantes.SERVICE_SMS_URL + "?" + Constantes.PARAM_PHONE + "=" + this.notificacion.getDestino() + "&" + Constantes.PARAM_MESSAGE + "=" + this.notificacion.getMensaje();
+			String url  = Constantes.SERVICE_SMS_URL + "?" + Constantes.PARAM_PHONE + "=" + this.msg.getDestino() + "&" + Constantes.PARAM_MESSAGE + "=" + this.msg.getMensaje();
 			System.out.println(url);
 			
 			HttpGet request = new HttpGet(url);
