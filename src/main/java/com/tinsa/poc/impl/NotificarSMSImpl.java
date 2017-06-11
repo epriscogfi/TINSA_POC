@@ -10,15 +10,15 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.tinsa.poc.interfaces.NotificarMensaje;
-import com.tinsa.poc.proxy.Notificacion;
+import com.tinsa.poc.proxy.Mensaje;
 import com.tinsa.poc.utils.Constantes;
 
 public class NotificarSMSImpl implements NotificarMensaje {
 
 	
-	private Notificacion notificacion;
+	private Mensaje notificacion;
 
-	public NotificarSMSImpl(Notificacion notificacion) {
+	public NotificarSMSImpl(Mensaje notificacion) {
 		super();
 		this.notificacion = notificacion;
 	}
@@ -27,8 +27,8 @@ public class NotificarSMSImpl implements NotificarMensaje {
 	@Override
 	public void tratarMensaje() {
 		// TODO Auto-generated method stub
-		System.out.println("Enviando " + this.notificacion.getTipoEnvio() + " notificacion... to " + this.notificacion.getDestino() + " with this message " + this.notificacion.getMensaje());
-		try {
+		System.out.println("Enviando " + this.notificacion.getTipoEnvio() + " notificacion con id " + notificacion.getId() + " ... to " + this.notificacion.getDestino() + " with this message " + this.notificacion.getMensaje());
+		try { 
 			
 			HttpClient httpClient = HttpClients.createDefault();
 			

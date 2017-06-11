@@ -1,13 +1,15 @@
 package com.tinsa.poc.proxy;
 
-public class Notificacion {
-
+public class Mensaje {
+	
+	private Long id;
 	private String destino;
 	private String tipoEnvio;
 	private String mensaje;
 	
-	public Notificacion(String sendTo, String tipoEnvio, String mensaje) {
+	public Mensaje(Long id, String sendTo, String tipoEnvio, String mensaje) {
 		super();
+		this.id = id;
 		this.destino = sendTo;
 		this.tipoEnvio = tipoEnvio;
 		this.mensaje = mensaje;
@@ -29,6 +31,12 @@ public class Notificacion {
 	}
 	public void setMensaje(String mensaje) {
 		this.mensaje = mensaje;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 }

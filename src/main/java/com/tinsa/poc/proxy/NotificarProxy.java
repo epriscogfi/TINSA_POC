@@ -10,9 +10,9 @@ import com.tinsa.poc.utils.Constantes;
 public class NotificarProxy implements NotificarMensaje{
 	
 	private NotificarMensaje notificar;
-	private Notificacion notificacion;
+	private Mensaje notificacion;
 	
-	public NotificarProxy(Notificacion notificacion) {
+	public NotificarProxy(Mensaje notificacion) {
 		super();
 		
 		this.notificacion = notificacion;

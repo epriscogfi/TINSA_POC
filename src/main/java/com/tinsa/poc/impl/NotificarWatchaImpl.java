@@ -1,13 +1,13 @@
 package com.tinsa.poc.impl;
 
 import com.tinsa.poc.interfaces.NotificarMensaje;
-import com.tinsa.poc.proxy.Notificacion;
+import com.tinsa.poc.proxy.Mensaje;
 
 public class NotificarWatchaImpl implements NotificarMensaje {
 
-	private Notificacion notificacion;
+	private Mensaje notificacion;
 	
-	public NotificarWatchaImpl(Notificacion notificacion) {
+	public NotificarWatchaImpl(Mensaje notificacion) {
 		super();
 		this.notificacion = notificacion;
 	}
