@@ -17,13 +17,24 @@ public class NotificarSMSImpl implements NotificarMensaje {
 
 	
 	private Mensaje msg;
+	private int result;
 
 	public NotificarSMSImpl(Mensaje msg) {
 		super();
 		this.msg = msg;
 	}
 
-	
+	@Override
+	public int getResult() {
+		return result;
+	}
+
+
+	public void setResult(int result) {
+		this.result = result;
+	}
+
+
 	@Override
 	public void tratarMensaje() {
 		// TODO Auto-generated method stub
@@ -39,13 +50,15 @@ public class NotificarSMSImpl implements NotificarMensaje {
 			request.setHeader("Accept", "application/json");
 		
 			HttpResponse response = httpClient.execute(request);
-		
-			System.out.println(response.getEntity());
+			
+			this.result = response.getStatusLine().getStatusCode();
+			
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			this.result = 0;
 		}
 	}
-
+	
 }

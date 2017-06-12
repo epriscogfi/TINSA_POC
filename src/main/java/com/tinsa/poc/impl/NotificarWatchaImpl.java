@@ -18,4 +18,10 @@ public class NotificarWatchaImpl implements NotificarMensaje {
 
 	}
 
+	@Override
+	public int getResult() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

@@ -19,4 +19,10 @@ public class NotificarFAXImpl implements NotificarMensaje {
 		
 	}
 
+	@Override
+	public int getResult() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

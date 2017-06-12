@@ -4,4 +4,6 @@ public interface NotificarMensaje {
 
 	public void tratarMensaje();
 	
+	public int getResult();
+	
 }
