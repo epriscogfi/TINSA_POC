@@ -15,13 +15,11 @@ public class NotificarFAXImpl implements NotificarMensaje {
 
 	@Override
 	public void tratarMensaje() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public int getResult() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
