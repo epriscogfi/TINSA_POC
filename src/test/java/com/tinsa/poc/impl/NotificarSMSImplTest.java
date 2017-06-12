@@ -7,22 +7,19 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.tinsa.poc.proxy.Mensaje;
+import com.tinsa.poc.utils.Constantes;
 
 @RunWith(SpringRunner.class)
 public class NotificarSMSImplTest {
 	
-	private static final String DESTINO = "666251478";
-	private static final String TIPO_ENVIO = "SMS";
-    private static final String MENSAJE = "Mensaje";
-    
 	private Mensaje mensajeOK;
 	private Mensaje mensajeKO;
 	
 	@Before
 	public void SetUp(){
 		
-		mensajeOK = new Mensaje(1L, DESTINO, TIPO_ENVIO, MENSAJE);
-		mensajeKO = new Mensaje(1L, DESTINO, TIPO_ENVIO, MENSAJE);
+		mensajeOK = new Mensaje(Constantes.DESTINO, Constantes.TIPO_ENVIO, Constantes.MENSAJE);
+		mensajeKO = new Mensaje(Constantes.DESTINO, Constantes.TIPO_ENVIO, null);
 		
 	}
 	

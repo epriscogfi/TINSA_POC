@@ -5,11 +5,12 @@ import com.tinsa.poc.proxy.Mensaje;
 
 public class NotificarMailImpl implements NotificarMensaje {
 
-	private Mensaje notificacion;
+	@SuppressWarnings("unused")
+	private Mensaje msg;
 	
 	public NotificarMailImpl(Mensaje msg) {
 		super();
-		this.notificacion = msg;
+		this.msg = msg;
 	}
 
 	@Override

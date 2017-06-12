@@ -5,6 +5,7 @@ import com.tinsa.poc.proxy.Mensaje;
 
 public class NotificarWatchaImpl implements NotificarMensaje {
 
+	@SuppressWarnings("unused")
 	private Mensaje msg;
 	
 	public NotificarWatchaImpl(Mensaje msg) {

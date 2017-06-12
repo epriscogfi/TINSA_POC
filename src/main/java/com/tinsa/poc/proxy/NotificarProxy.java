@@ -18,6 +18,8 @@ public class NotificarProxy implements NotificarMensaje{
 	
 	private NotificarMensaje notificar;
 	private Mensaje msg;
+	private int estado;
+	private Long id;
 	
 	
 	@Autowired
@@ -27,12 +29,6 @@ public class NotificarProxy implements NotificarMensaje{
 	
 	public NotificarProxy() {
 		super();
-	}
-	
-	@Override
-	public int getResult() {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 	
 	public NotificarProxy inferImpl(Mensaje msg) {
@@ -57,6 +53,8 @@ public class NotificarProxy implements NotificarMensaje{
 			this.notificar = new NotificarWatchaImpl(msg);
 			break;
 		
+		default:
+			break;
 		
 		};
 		
@@ -66,17 +64,27 @@ public class NotificarProxy implements NotificarMensaje{
 
 	@Override
 	public void tratarMensaje() {
-		// TODO Auto-generated method stub
 		
 		notificar.tratarMensaje();
 		
-		int estado = notificar.getResult() == Constantes.RESULT_OK ? Constantes.ESTADO_ENVIADO : Constantes.ESTADO_NO_ENVIADO; 
+		this.estado = notificar.getResult() == Constantes.RESULT_OK ? Constantes.ESTADO_ENVIADO : Constantes.ESTADO_NO_ENVIADO; 
 		
 		Notificacion notificacion = new Notificacion(msg.getDestino(), msg.getTipoEnvio(), msg.getMensaje(), estado);
 		notificacionRepo.save( notificacion);
 		
-		Iterable<Notificacion> notificaciones = notificacionRepo.findAll();
-		System.out.println(notificaciones.toString());
+		this.id = notificacion.getId();
+		
+		System.out.println(notificacionRepo.findAll().toString());
+	}
+	
+	@Override
+	public int getResult() {
+		return estado;
+	}
+	
+	public Long getId() {
+		return id;
 	}
 
-	}
+	
+}

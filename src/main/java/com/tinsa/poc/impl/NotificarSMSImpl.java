@@ -6,8 +6,6 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
 import com.tinsa.poc.interfaces.NotificarMensaje;
 import com.tinsa.poc.proxy.Mensaje;
@@ -37,8 +35,8 @@ public class NotificarSMSImpl implements NotificarMensaje {
 
 	@Override
 	public void tratarMensaje() {
-		// TODO Auto-generated method stub
-		System.out.println("Enviando " + this.msg.getTipoEnvio() + " notificacion con id " + msg.getId() + " ... to " + this.msg.getDestino() + " with this message " + this.msg.getMensaje());
+		
+		System.out.println("Enviando " + this.msg.getTipoEnvio() + " notificacion... to " + this.msg.getDestino() + " with this message " + this.msg.getMensaje());
 		try { 
 			
 			HttpClient httpClient = HttpClients.createDefault();
@@ -55,7 +53,6 @@ public class NotificarSMSImpl implements NotificarMensaje {
 			
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			this.result = 0;
 		}

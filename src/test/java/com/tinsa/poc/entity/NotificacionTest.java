@@ -7,26 +7,17 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.tinsa.poc.utils.Constantes;
+
 @RunWith(SpringRunner.class)
 public class NotificacionTest {
 	
-	private static final String DESTINO = "666251478";
-	private static final String TIPO_ENVIO = "SMS";
-    private static final String MENSAJE = "Mensaje";
-    private static final Integer ESTADO = 1;
-    
-    private static final String OTRO_DESTINO = "677258547";
-	private static final String OTRO_TIPO_ENVIO = "MAIL";
-    private static final String OTRO_MENSAJE = "Otro mensaje";
-    private static final Integer OTRO_ESTADO = 0;
-    
-	
-    private Notificacion notificacion;
+	private Notificacion notificacion;
     
 	@Before
 	public void SetUp(){
 			    
-	    notificacion = new Notificacion(DESTINO, TIPO_ENVIO, MENSAJE, ESTADO);
+	    notificacion = new Notificacion(Constantes.DESTINO, Constantes.TIPO_ENVIO, Constantes.MENSAJE, Constantes.ESTADO);
 	}
 
 	@Test
@@ -42,10 +33,10 @@ public class NotificacionTest {
 		Integer estado = notificacionTest.getEstado();
 				
 		//THEN
-		assertThat(destino.equals(DESTINO));
-		assertThat(tipoEnvio.equals(TIPO_ENVIO));
-		assertThat(mensaje.equals(MENSAJE));
-		assertThat(estado.equals(ESTADO));
+		assertThat(destino.equals(Constantes.DESTINO));
+		assertThat(tipoEnvio.equals(Constantes.TIPO_ENVIO));
+		assertThat(mensaje.equals(Constantes.MENSAJE));
+		assertThat(estado.equals(Constantes.ESTADO));
 	}
 	
 	@Test
@@ -55,16 +46,16 @@ public class NotificacionTest {
 		Notificacion notificacionTest = notificacion;
 		
 		//WHEN
-		notificacionTest.setDestino(OTRO_DESTINO);
-		notificacionTest.setEstado(OTRO_ESTADO);
-		notificacionTest.setMensaje(OTRO_MENSAJE);
-		notificacionTest.setTipoEnvio(TIPO_ENVIO);
+		notificacionTest.setDestino(Constantes.OTRO_DESTINO);
+		notificacionTest.setEstado(Constantes.OTRO_ESTADO);
+		notificacionTest.setMensaje(Constantes.OTRO_MENSAJE);
+		notificacionTest.setTipoEnvio(Constantes.TIPO_ENVIO);
 		
 		//THEN
-		assertThat(notificacionTest.getDestino().equals(OTRO_DESTINO));
-		assertThat(notificacionTest.getEstado() == (OTRO_ESTADO));
-		assertThat(notificacionTest.getMensaje().equals(OTRO_MENSAJE));
-		assertThat(notificacionTest.getTipoEnvio().equals(OTRO_TIPO_ENVIO));
+		assertThat(notificacionTest.getDestino().equals(Constantes.OTRO_DESTINO));
+		assertThat(notificacionTest.getEstado() == Constantes.OTRO_ESTADO);
+		assertThat(notificacionTest.getMensaje().equals(Constantes.OTRO_MENSAJE));
+		assertThat(notificacionTest.getTipoEnvio().equals(Constantes.OTRO_TIPO_ENVIO));
 	}
 	
 }

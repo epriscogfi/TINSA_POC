@@ -6,11 +6,12 @@ import com.tinsa.poc.proxy.Mensaje;
 public class NotificarFAXImpl implements NotificarMensaje {
 
 	
-	private Mensaje notificacion;
+	@SuppressWarnings("unused")
+	private Mensaje msg;
 	
 	public NotificarFAXImpl(Mensaje msg) {
 		super();
-		this.notificacion = msg;
+		this.msg = msg;
 	}
 
 	@Override
