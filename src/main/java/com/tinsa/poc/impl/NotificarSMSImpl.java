@@ -11,28 +11,51 @@ import com.tinsa.poc.interfaces.NotificarMensaje;
 import com.tinsa.poc.proxy.Mensaje;
 import com.tinsa.poc.utils.Constantes;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class NotificarSMSImpl.
+ */
 public class NotificarSMSImpl implements NotificarMensaje {
 
 	
+	/** The msg. */
 	private Mensaje msg;
+	
+	/** The result. */
 	private int result;
 
+	/**
+	 * Instantiates a new notificar SMS impl.
+	 *
+	 * @param msg the msg
+	 */
 	public NotificarSMSImpl(Mensaje msg) {
 		super();
 		this.msg = msg;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.tinsa.poc.interfaces.NotificarMensaje#getResult()
+	 */
 	@Override
 	public int getResult() {
 		return result;
 	}
 
 
+	/**
+	 * Sets the result.
+	 *
+	 * @param result the new result
+	 */
 	public void setResult(int result) {
 		this.result = result;
 	}
 
 
+	/* (non-Javadoc)
+	 * @see com.tinsa.poc.interfaces.NotificarMensaje#tratarMensaje()
+	 */
 	@Override
 	public void tratarMensaje() {
 		

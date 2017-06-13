@@ -8,15 +8,26 @@ import org.junit.Test;
 
 import com.tinsa.poc.utils.Constantes;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ResultadoNotificarTest.
+ */
 public class ResultadoNotificarTest {
 
+	/** The resultado notificar. */
 	ResultadoNotificar resultadoNotificar;
 	
+	/**
+	 * Sets the up.
+	 */
 	@Before
 	public void SetUp(){
 		resultadoNotificar = new ResultadoNotificar(1L, Constantes.ESTADO_ENVIADO);
 	}
 	
+	/**
+	 * Given resultado notificar object when call getters then returns its properties.
+	 */
 	@Test
 	public void GivenResultadoNotificarObjectWhenCallGettersThenReturnsItsProperties(){
 		
@@ -32,6 +43,9 @@ public class ResultadoNotificarTest {
 		assertThat(estadoMensaje == Constantes.ESTADO_ENVIADO);
 	}
 	
+	/**
+	 * Given resultado notificar object when set values to its properties then getters return same values.
+	 */
 	@Test
 	public void givenResultadoNotificarObjectWhenSetValuesToItsPropertiesThenGettersReturnSameValues(){
 		

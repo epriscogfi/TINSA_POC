@@ -9,12 +9,22 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.tinsa.poc.proxy.Mensaje;
 import com.tinsa.poc.utils.Constantes;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class NotificarSMSImplTest.
+ */
 @RunWith(SpringRunner.class)
 public class NotificarSMSImplTest {
 	
+	/** The mensaje OK. */
 	private Mensaje mensajeOK;
+	
+	/** The mensaje KO. */
 	private Mensaje mensajeKO;
 	
+	/**
+	 * Sets the up.
+	 */
 	@Before
 	public void SetUp(){
 		
@@ -23,6 +33,9 @@ public class NotificarSMSImplTest {
 		
 	}
 	
+	/**
+	 * Given valid message when is treated then return 200 code.
+	 */
 	@Test
 	public void GivenValidMessageWhenIsTreatedThenReturn200Code(){
 
@@ -37,6 +50,9 @@ public class NotificarSMSImplTest {
 		
  	}
 	
+	/**
+	 * Given invalid message when is treated then return code distinct 200.
+	 */
 	@Test
 	public void GivenInvalidMessageWhenIsTreatedThenReturnCodeDistinct200(){
 

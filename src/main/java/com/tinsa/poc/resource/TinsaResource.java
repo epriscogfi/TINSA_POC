@@ -11,14 +11,27 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tinsa.poc.proxy.Mensaje;
 import com.tinsa.poc.proxy.NotificarProxy;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TinsaResource.
+ */
 @RestController
 public class TinsaResource {
 
 	
+	/** The notificar proxy. */
 	@Autowired
 	@Qualifier("notificarProxy")
 	private NotificarProxy notificarProxy;
 	
+	/**
+	 * Notificar.
+	 *
+	 * @param destino the destino
+	 * @param tipoMensaje the tipo mensaje
+	 * @param mensaje the mensaje
+	 * @return the resultado notificar
+	 */
 	@RequestMapping(value="/notificar", method=RequestMethod.POST)
 	public @ResponseBody ResultadoNotificar notificar(
 			@RequestParam(value="destino") String destino, 

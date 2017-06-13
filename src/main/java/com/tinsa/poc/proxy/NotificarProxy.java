@@ -13,24 +13,45 @@ import com.tinsa.poc.interfaces.NotificarMensaje;
 import com.tinsa.poc.repository.NotificacionRepository;
 import com.tinsa.poc.utils.Constantes;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class NotificarProxy.
+ */
 @Service("notificarProxy")
 public class NotificarProxy implements NotificarMensaje{
 	
+	/** The notificar. */
 	private NotificarMensaje notificar;
+	
+	/** The msg. */
 	private Mensaje msg;
+	
+	/** The estado. */
 	private int estado;
+	
+	/** The id. */
 	private Long id;
 	
 	
+	/** The notificacion repo. */
 	@Autowired
 	@Qualifier("notificacionRepository")
 	private NotificacionRepository notificacionRepo;
 	
 	
+	/**
+	 * Instantiates a new notificar proxy.
+	 */
 	public NotificarProxy() {
 		super();
 	}
 	
+	/**
+	 * Infer impl.
+	 *
+	 * @param msg the msg
+	 * @return the notificar proxy
+	 */
 	public NotificarProxy inferImpl(Mensaje msg) {
 		
 		this.msg = msg;
@@ -62,6 +83,9 @@ public class NotificarProxy implements NotificarMensaje{
 	}
 
 
+	/* (non-Javadoc)
+	 * @see com.tinsa.poc.interfaces.NotificarMensaje#tratarMensaje()
+	 */
 	@Override
 	public void tratarMensaje() {
 		
@@ -77,11 +101,19 @@ public class NotificarProxy implements NotificarMensaje{
 		System.out.println(notificacionRepo.findAll().toString());
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.tinsa.poc.interfaces.NotificarMensaje#getResult()
+	 */
 	@Override
 	public int getResult() {
 		return estado;
 	}
 	
+	/**
+	 * Gets the id.
+	 *
+	 * @return the id
+	 */
 	public Long getId() {
 		return id;
 	}
