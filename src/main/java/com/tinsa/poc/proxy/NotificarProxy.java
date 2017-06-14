@@ -13,44 +13,43 @@ import com.tinsa.poc.interfaces.NotificarMensaje;
 import com.tinsa.poc.repository.NotificacionRepository;
 import com.tinsa.poc.utils.Constantes;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class NotificarProxy.
+ * Clase NotificarProxy, que implementa el interfaz NotificarMensaje y es la parte Proxy, propiamente dicha, dentro del patrón Proxy implementado.
  */
 @Service("notificarProxy")
 public class NotificarProxy implements NotificarMensaje{
 	
-	/** The notificar. */
+	/** Notificar, representará la implementación elegica para el envío de la notificación. */
 	private NotificarMensaje notificar;
 	
-	/** The msg. */
+	/** Objeto Mensaje, que representa la información necesaria para llevar a cabo la notificación. */
 	private Mensaje msg;
 	
-	/** The estado. */
+	/** Estado de la notificación. */
 	private int estado;
 	
-	/** The id. */
+	/** Id de la notificación. */
 	private Long id;
 	
 	
-	/** The notificacion repo. */
+	/** Repositorio. Provee las operaciones CRUD para la entidad Notificación. */
 	@Autowired
 	@Qualifier("notificacionRepository")
 	private NotificacionRepository notificacionRepo;
 	
 	
 	/**
-	 * Instantiates a new notificar proxy.
+	 * Constructor por defecto. Instancia la clase NotificarProxy.
 	 */
 	public NotificarProxy() {
 		super();
 	}
 	
 	/**
-	 * Infer impl.
+	 * Infiere la implementación que realizará la notificación en función del tipo de mensaje a enviar.
 	 *
-	 * @param msg the msg
-	 * @return the notificar proxy
+	 * @param msg Mensaje
+	 * @return devuelve a sí mismo.
 	 */
 	public NotificarProxy inferImpl(Mensaje msg) {
 		
@@ -89,20 +88,27 @@ public class NotificarProxy implements NotificarMensaje{
 	@Override
 	public void tratarMensaje() {
 		
+		// Envía la notificación por el canal inferido (SMS, mail, FAX...)
 		notificar.tratarMensaje();
 		
+		//En función del resultado de la notificación definiremos el estado de la misma, y que almacenaremos en BDD
 		this.estado = notificar.getResult() == Constantes.RESULT_OK ? Constantes.ESTADO_ENVIADO : Constantes.ESTADO_NO_ENVIADO; 
 		
+		//Construimos la entidad Notifación que será repositada
 		Notificacion notificacion = new Notificacion(msg.getDestino(), msg.getTipoEnvio(), msg.getMensaje(), estado);
 		notificacionRepo.save( notificacion);
 		
+		//Informamos la propiedad id
 		this.id = notificacion.getId();
 		
+		//Comprobación. Imprimimos por consola el conjunto de todas las notificaciones enviadas.
 		System.out.println(notificacionRepo.findAll().toString());
 	}
 	
-	/* (non-Javadoc)
+	/** 
 	 * @see com.tinsa.poc.interfaces.NotificarMensaje#getResult()
+	 * Facility: devolvemos como resultado el estado de la notificación.
+	 * 
 	 */
 	@Override
 	public int getResult() {
@@ -110,9 +116,9 @@ public class NotificarProxy implements NotificarMensaje{
 	}
 	
 	/**
-	 * Gets the id.
+	 * Devuelve el id de la notificación.
 	 *
-	 * @return the id
+	 * @return id
 	 */
 	public Long getId() {
 		return id;

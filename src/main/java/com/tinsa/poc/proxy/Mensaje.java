@@ -1,72 +1,71 @@
 package com.tinsa.poc.proxy;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class Mensaje.
+ * Clase Mensaje. Representa el mensaje de entrada al proceso de notificación.
  */
 public class Mensaje {
 	
-	/** The destino. */
+	/** Destinatario. */
 	private String destino;
 	
-	/** The tipo envio. */
+	/** Tipo de notificación a enviar (SMS, Mail, FAX...). */
 	private String tipoEnvio;
 	
-	/** The mensaje. */
+	/** Contenido del mensaje a notificar. */
 	private String mensaje;
 	
 	/**
-	 * Instantiates a new mensaje.
+	 * Constructor de la clase Mensaje.
 	 *
-	 * @param sendTo the send to
-	 * @param tipoEnvio the tipo envio
-	 * @param mensaje the mensaje
+	 * @param destino
+	 * @param tipoEnvio
+	 * @param mensaje
 	 */
-	public Mensaje(String sendTo, String tipoEnvio, String mensaje) {
+	public Mensaje(String destino, String tipoEnvio, String mensaje) {
 		super();
-		this.destino = sendTo;
+		this.destino = destino;
 		this.tipoEnvio = tipoEnvio;
 		this.mensaje = mensaje;
 	}
 	
 	/**
-	 * Gets the destino.
+	 * Devuelve la propiedad destino.
 	 *
-	 * @return the destino
+	 * @return destino
 	 */
 	public String getDestino() {
 		return destino;
 	}
 	
 	/**
-	 * Sets the destino.
+	 * Informa la propiedad destino.
 	 *
-	 * @param destino the new destino
+	 * @param destino
 	 */
 	public void setDestino(String destino) {
 		this.destino = destino;
 	}
 	
 	/**
-	 * Gets the tipo envio.
+	 * Devuelve la propiedad tipoEnvio.
 	 *
-	 * @return the tipo envio
+	 * @return tipoEnvio
 	 */
 	public String getTipoEnvio() {
 		return tipoEnvio;
 	}
 	
 	/**
-	 * Sets the tipo envio.
+	 * Informa la propiedad tipoEnvio.
 	 *
-	 * @param tipoEnvio the new tipo envio
+	 * @param tipoEnvio
 	 */
 	public void setTipoEnvio(String tipoEnvio) {
 		this.tipoEnvio = tipoEnvio;
 	}
 	
 	/**
-	 * Gets the mensaje.
+	 * Devuelve la propiedad mensaje.
 	 *
 	 * @return the mensaje
 	 */
@@ -75,9 +74,9 @@ public class Mensaje {
 	}
 	
 	/**
-	 * Sets the mensaje.
+	 * Informa la propiedad mensaje.
 	 *
-	 * @param mensaje the new mensaje
+	 * @param mensaje
 	 */
 	public void setMensaje(String mensaje) {
 		this.mensaje = mensaje;

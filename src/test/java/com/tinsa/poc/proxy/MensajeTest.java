@@ -7,27 +7,16 @@ import org.junit.Test;
 
 import com.tinsa.poc.utils.Constantes;
 
-// TODO: Auto-generated Javadoc
-/**
- * The Class MensajeTest.
- */
 public class MensajeTest {
 	
-	/** The mensaje. */
 	Mensaje mensaje;
 	
-	/**
-	 * Sets the up.
-	 */
 	@Before
 	public void SetUp(){
 			    
 	    mensaje = new Mensaje(Constantes.DESTINO, Constantes.TIPO_ENVIO, Constantes.MENSAJE);
 	}
 
-	/**
-	 * Given notificacion object when call getters then return its properties.
-	 */
 	@Test
 	public void givenNotificacionObjectWhenCallGettersThenReturnItsProperties(){
 		
@@ -45,9 +34,6 @@ public class MensajeTest {
 		assertThat(mensaje.equals(Constantes.MENSAJE));
 	}
 	
-	/**
-	 * Given notificacion object when set values to its properties then getters return same values.
-	 */
 	@Test
 	public void givenNotificacionObjectWhenSetValuesToItsPropertiesThenGettersReturnSameValues(){
 		

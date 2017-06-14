@@ -11,23 +11,23 @@ import com.tinsa.poc.interfaces.NotificarMensaje;
 import com.tinsa.poc.proxy.Mensaje;
 import com.tinsa.poc.utils.Constantes;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class NotificarSMSImpl.
+ * Clase NotificarSMSImpl, que implementa el interfaz NotificarMensaje. 
+ * Es el RealSubject del patrón proxy
  */
 public class NotificarSMSImpl implements NotificarMensaje {
 
 	
-	/** The msg. */
+	/** Mensaje a notificar. */
 	private Mensaje msg;
 	
-	/** The result. */
+	/** Resultado de la notificación. */
 	private int result;
 
 	/**
-	 * Instantiates a new notificar SMS impl.
+	 * Constructor de la clase NotificiarSMSImpl.
 	 *
-	 * @param msg the msg
+	 * @param msg 
 	 */
 	public NotificarSMSImpl(Mensaje msg) {
 		super();
@@ -44,17 +44,20 @@ public class NotificarSMSImpl implements NotificarMensaje {
 
 
 	/**
-	 * Sets the result.
+	 * Informa el resultad de la notificación.
 	 *
-	 * @param result the new result
+	 * @param result
 	 */
 	public void setResult(int result) {
 		this.result = result;
 	}
 
 
-	/* (non-Javadoc)
+	/**
+	 * Realiza el tratamiento de una notificación tipo SMS e informa el resultado de la misma en la propiedad result
+	 * 
 	 * @see com.tinsa.poc.interfaces.NotificarMensaje#tratarMensaje()
+	 * 
 	 */
 	@Override
 	public void tratarMensaje() {
@@ -65,7 +68,6 @@ public class NotificarSMSImpl implements NotificarMensaje {
 			HttpClient httpClient = HttpClients.createDefault();
 			
 			String url  = Constantes.SERVICE_SMS_URL + "?" + Constantes.PARAM_PHONE + "=" + this.msg.getDestino() + "&" + Constantes.PARAM_MESSAGE + "=" + this.msg.getMensaje();
-			System.out.println(url);
 			
 			HttpGet request = new HttpGet(url);
 			request.setHeader("Accept", "application/json");

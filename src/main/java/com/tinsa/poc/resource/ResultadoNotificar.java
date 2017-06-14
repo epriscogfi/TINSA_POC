@@ -1,22 +1,21 @@
 package com.tinsa.poc.resource;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class ResultadoNotificar.
+ * Clase ResultadoNotificar. Representará la información a devolver por la operación POST /notificar 
  */
 public class ResultadoNotificar {
 
-	/** The id mensaje. */
+	/** Id del mensaje. */
 	private Long idMensaje;
 	
-	/** The estado mensaje. */
+	/** Estado del mensaje. */
 	private int estadoMensaje;
 	
 	/**
-	 * Instantiates a new resultado notificar.
+	 * Constructor de la clase.
 	 *
-	 * @param idMensaje the id mensaje
-	 * @param estadoMensaje the estado mensaje
+	 * @param idMensaje 
+	 * @param estadoMensaje
 	 */
 	public ResultadoNotificar(Long idMensaje, int estadoMensaje) {
 		super();
@@ -25,36 +24,36 @@ public class ResultadoNotificar {
 	}
 	
 	/**
-	 * Gets the id mensaje.
+	 * Devuelve la propiedad idMensaje.
 	 *
-	 * @return the id mensaje
+	 * @return idMensaje
 	 */
 	public Long getIdMensaje() {
 		return idMensaje;
 	}
 	
 	/**
-	 * Sets the id mensaje.
+	 * Informa la propiedad idMensaje.
 	 *
-	 * @param idMensaje the new id mensaje
+	 * @param idMensaje
 	 */
 	public void setIdMensaje(Long idMensaje) {
 		this.idMensaje = idMensaje;
 	}
 	
 	/**
-	 * Gets the estado mensaje.
+	 * Devuelve el estado del mensaje notificado.
 	 *
-	 * @return the estado mensaje
+	 * @return estadoMensaje
 	 */
 	public int getEstadoMensaje() {
 		return estadoMensaje;
 	}
 	
 	/**
-	 * Sets the estado mensaje.
+	 * Informa el estado del mensaje notificado.
 	 *
-	 * @param estadoMensaje the new estado mensaje
+	 * @param estadoMensaje
 	 */
 	public void setEstadoMensaje(int estadoMensaje) {
 		this.estadoMensaje = estadoMensaje;

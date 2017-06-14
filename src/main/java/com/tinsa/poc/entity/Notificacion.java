@@ -5,137 +5,136 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class Notificacion.
+ * Clase Notificacion, es una entidad que se corresponde con la tabla NOTIFICACION
  */
 @Entity
 public class Notificacion {
 	
 
-	/** The id. */
+	/** Propiedad id,  corresponde al campo id de la tabla. Autogenerado.*/
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
-	/** The destino. */
+	/** Propiedad destino,  corresponde al campo destino de la tabla. */
 	private String destino;
     
-	/** The tipo envio. */
+	/** Propiedad tipoEnvio,  corresponde al campo tipoEnvio de la tabla.  */
 	private String tipoEnvio;
     
-	/** The mensaje. */
+	/** Propiedad mensaje,  corresponde al campo mensaje de la tabla. */
 	private String mensaje;
     
-	/** The estado. */
+	/** Propiedad estado,  corresponde al campo estado de la tabla. */
 	private Integer estado;
 	
 	
 	/**
-	 * Instantiates a new notificacion.
+	 * Constructor por defecto. Instancia Notificacion.
 	 */
 	protected Notificacion() {}
 
 	/**
-	 * Instantiates a new notificacion.
+	 * Constructor. Instancia la clase notificación informando sus parámetros.
 	 *
-	 * @param sendTo the send to
-	 * @param tipoEnvio the tipo envio
-	 * @param mensaje the mensaje
-	 * @param estado the estado
+	 * @param destino destinatario de la notificacion
+	 * @param tipoEnvio tipo de envio de la notificacion (SMS, mail, FAX...)
+	 * @param mensaje mensaje que se quiere notificar
+	 * @param estado estado de la notificacion
 	 */
-	public Notificacion(String sendTo, String tipoEnvio, String mensaje, Integer estado) {
-		this.destino = sendTo;
+	public Notificacion(String destino, String tipoEnvio, String mensaje, Integer estado) {
+		this.destino = destino;
 		this.tipoEnvio = tipoEnvio;
 		this.mensaje = mensaje;
 		this.estado = estado;
 	}
 	
 	/**
-	 * Gets the id.
+	 * Recupera la propiedad id.
 	 *
-	 * @return the id
+	 * @return id
 	 */
 	public Long getId() {
 		return id;
 	}
 
 	/**
-	 * Sets the id.
+	 * Informa la propiedad id.
 	 *
-	 * @param id the new id
+	 * @param id
 	 */
 	public void setId(Long id) {
 		this.id = id;
 	}
 
 	/**
-	 * Gets the destino.
+	 * Recupera la propiedad destino.
 	 *
-	 * @return the destino
+	 * @return destino
 	 */
 	public String getDestino() {
 		return destino;
 	}
 
 	/**
-	 * Sets the destino.
+	 * Informa la propiedad destino.
 	 *
-	 * @param destino the new destino
+	 * @param destino
 	 */
 	public void setDestino(String destino) {
 		this.destino = destino;
 	}
 
 	/**
-	 * Gets the tipo envio.
+	 * Recupera la propiedad tipoEnvio.
 	 *
-	 * @return the tipo envio
+	 * @return tipoEnvio
 	 */
 	public String getTipoEnvio() {
 		return tipoEnvio;
 	}
 
 	/**
-	 * Sets the tipo envio.
+	 * Informa la propiedad tipoEnvio.
 	 *
-	 * @param tipoEnvio the new tipo envio
+	 * @param tipoEnvio
 	 */
 	public void setTipoEnvio(String tipoEnvio) {
 		this.tipoEnvio = tipoEnvio;
 	}
 
 	/**
-	 * Gets the mensaje.
+	 * Recupera la propiedad mensaje.
 	 *
-	 * @return the mensaje
+	 * @return mensaje
 	 */
 	public String getMensaje() {
 		return mensaje;
 	}
 
 	/**
-	 * Sets the mensaje.
+	 * Informa la propiedad mensaje.
 	 *
-	 * @param mensaje the new mensaje
+	 * @param mensaje
 	 */
 	public void setMensaje(String mensaje) {
 		this.mensaje = mensaje;
 	}
 
 	/**
-	 * Gets the estado.
+	 * Recupera la propiedad estado.
 	 *
-	 * @return the estado
+	 * @return estado
 	 */
 	public int getEstado() {
 		return estado;
 	}
 
 	/**
-	 * Sets the estado.
+	 * Informa la propiedad estado.
 	 *
-	 * @param estado the new estado
+	 * @param estado
 	 */
 	public void setEstado(int estado) {
 		this.estado = estado;

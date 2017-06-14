@@ -9,28 +9,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.tinsa.poc.utils.Constantes;
 
-// TODO: Auto-generated Javadoc
-/**
- * The Class NotificacionTest.
- */
 @RunWith(SpringRunner.class)
 public class NotificacionTest {
 	
-	/** The notificacion. */
 	private Notificacion notificacion;
     
-	/**
-	 * Sets the up.
-	 */
 	@Before
 	public void SetUp(){
 			    
 	    notificacion = new Notificacion(Constantes.DESTINO, Constantes.TIPO_ENVIO, Constantes.MENSAJE, Constantes.ESTADO);
 	}
 
-	/**
-	 * Given notificacion object when call getters then return its properties.
-	 */
 	@Test
 	public void givenNotificacionObjectWhenCallGettersThenReturnItsProperties(){
 		
@@ -50,9 +39,6 @@ public class NotificacionTest {
 		assertThat(estado.equals(Constantes.ESTADO));
 	}
 	
-	/**
-	 * Given notificacion object when set values to its properties then getters return same values.
-	 */
 	@Test
 	public void givenNotificacionObjectWhenSetValuesToItsPropertiesThenGettersReturnSameValues(){
 		

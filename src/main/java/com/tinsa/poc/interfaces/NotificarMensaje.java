@@ -1,8 +1,11 @@
 package com.tinsa.poc.interfaces;
 
-// TODO: Auto-generated Javadoc
+// 
 /**
- * The Interface NotificarMensaje.
+ * Interfaz NotificarMensaje del patrón Proxy, implementado para el tratamiento de los mensajes, cuyas acciones serán:
+ * 
+ *  - Enviar la notificación. Cada clase que implemente este interfaz deberá implementar su propia manera de enviar una notificación.
+ *  - Repositar en BDD. Se hará como añadido al envío de la notificación.
  */
 public interface NotificarMensaje {
 
@@ -12,9 +15,9 @@ public interface NotificarMensaje {
 	public void tratarMensaje();
 	
 	/**
-	 * Gets the result.
+	 * Devuelve el resultado de la notificación en el caso de las implementaciones de este interfaz. En la clase proxy, devolverá el estado de la notificación.
 	 *
-	 * @return the result
+	 * @return result
 	 */
 	public int getResult();
 	

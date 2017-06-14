@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.tinsa.poc.entity.Notificacion;
 
 /**
- * The Interface NotificacionRepository.
+ * Interfaz NotificacionRepository, que extiende de CrudRepository y provee las operaciones CRUD básicas de la entidad Notificación
  */
 @Repository("notificacionRepository")
 public interface NotificacionRepository extends CrudRepository<Notificacion, Integer> {
